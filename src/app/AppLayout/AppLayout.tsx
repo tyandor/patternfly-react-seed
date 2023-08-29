@@ -11,14 +11,15 @@ import {
   SkipToContent
 } from '@patternfly/react-core';
 import { routes, IAppRoute, IAppRouteGroup } from '@app/routes';
-import logo from '@app/bgimages/Patternfly-Logo.svg';
+// import logo from '@app/bgimages/Patternfly-Logo.svg';
+import logo from '@app/bgimages/e-prime.svg';
 
 interface IAppLayout {
   children: React.ReactNode;
 }
 
 const AppLayout: React.FunctionComponent<IAppLayout> = ({ children }) => {
-  const [isNavOpen, setIsNavOpen] = React.useState(true);
+  const [isNavOpen, setIsNavOpen] = React.useState(false);
   const [isMobileView, setIsMobileView] = React.useState(true);
   const [isNavOpenMobile, setIsNavOpenMobile] = React.useState(false);
   const onNavToggleMobile = () => {
@@ -37,7 +38,7 @@ const AppLayout: React.FunctionComponent<IAppLayout> = ({ children }) => {
       history.push('/');
     }
     return (
-      <img src={logo} onClick={handleClick} alt="PatternFly Logo" />
+      <img src={logo} style={{maxWidth:220}} onClick={handleClick} alt="PatternFly Logo" />
     );
   }
 
